@@ -52,6 +52,8 @@ ul {
   display: flex;
   gap: 10px;
   align-items: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-link:last-child {
   margin-right: 0;
@@ -59,6 +61,19 @@ ul {
 .header-link:hover {
   color: #2196f3;
   fill: #2196f3;
+}
+.current-page {
+  position: relative;
+  color: #2196f3;
+}
+.current-page::after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  background: #2196f3;
+  border-radius: 2px;
+  position: absolute;
+  top: 44px;
 }
 
 /* HERO */
@@ -206,6 +221,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-soc-link:hover .team-soc-icon {
   fill: white;
@@ -224,6 +240,7 @@ ul {
 }
 .team-soc-icon {
   fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* CLIENTS */
@@ -250,6 +267,7 @@ ul {
   border-radius: 4px;
   border: 1px #afb1b8 solid;
   display: block;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-link:hover .clients-icon {
   fill: #2196f3;
@@ -260,6 +278,7 @@ ul {
 .clients-icon {
   fill: #afb1b8;
   display: block;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* FOOTER */
@@ -331,7 +350,8 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .join-icon {
   fill: white;
@@ -361,6 +381,9 @@ ul {
   border: none;
   background-color: #f5f4fa;
   padding: 6px 22px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button:hover {
   background: #2196f3;
@@ -393,6 +416,7 @@ ul {
 .portfolio-gallery-item {
   background: white;
   border: 1px #eeeeee solid;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-gallery-item:hover {
   box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -416,6 +440,29 @@ ul {
   width: 370px;
   height: 294px;
 }
+
+.portfolio-gallery-top-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-gallery-top-text {
+  position: absolute;
+  top: 0;
+  background-color: rgba(33, 150, 243, 0.9);
+  height: 100%;
+  color: white;
+  font-size: 18px;
+  line-height: calc(28 / 18);
+  letter-spacing: 0.54px;
+  padding: 63px 24px;
+  overflow: auto;
+  transform: translateY(100%);
+  transition: transform 250ms linear;
+}
+.portfolio-gallery-item:hover .portfolio-gallery-top-text {
+  transform: translateY(0);
+}
+/* MODAL */
 
 .backdrop {
   width: 100%;
